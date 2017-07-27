@@ -1,6 +1,6 @@
 """""
 four_letters_in_common(source, dictionary) function
-Version 0.9
+Version 1.0
 Description:
 Takes a source string and dictionary list as arguments and returns a list of
 dictionary words that match at least 4 consecutive letters in common with the
@@ -34,22 +34,26 @@ def four_letters_in_common(source, dictionary):
         for i in range(len(dictionary)):
             for j in range(len(permutations)):
                 if permutations[j] in dictionary[i]:
-                    if dictionary[i] not in output_list:
+                    if dictionary[i] not in output_list:    #This line stops any duplicates in the output_list
                         output_list += [dictionary[i]]
 
     return output_list
 
-                
+# This is a function which automatically runs unit tests on the original function                
 def four_letters_in_common_test():
     tests_completed = 0
     sample_dictionary = ["AMPLITUDE", "AMPLITUDES", "APLITE", "APLITES", "APLITIC", "DISPLING", "EARSPLITTING", "HAIRSPLITTER", "HAIRSPLITTERS", "HAIRSPLITTING", "HAIRSPLITTINGS", "HAPLITE", "HAPLITES", "HAPLITIC", "HOPLITE", "HOPLITES", "HOPLITIC", "LAMPLIT", "POPLITEAL", "POPLITEI", "POPLITEUS", "POPLITIC", "PRESPLIT", "RESPLICE", "RESPLICED", "RESPLICES", "RESPLICING", "RESPLIT", "RESPLITS", "RESPLITTING", "SHINSPLINTS", "SIDESPLITTING", "SIDESPLITTINGLY", "SPLICE", "SPLICED", "SPLICER", "SPLICERS", "SPLICES", "SPLICING", "SPLICINGS", "SPLIFF", "SPLIFFS", "SPLINE", "SPLINED", "SPLINES", "SPLINING", "SPLINT", "SPLINTED", "SPLINTER", "SPLINTERED", "SPLINTERIER", "SPLINTERIEST", "SPLINTERING", "SPLINTERS", "SPLINTERY", "SPLINTING", "SPLINTLIKE", "SPLINTS", "SPLINTWOOD", "SPLINTWOODS", "SPLISH", "SPLISHED", "SPLISHES", "SPLISHING", "SPLIT", "SPLITS", "SPLITTED", "SPLITTER", "SPLITTERS", "SPLITTING", "SPLITTINGS", "SPLITTISM", "SPLITTISMS", "SPLITTIST", "SPLITTISTS", "TRIPLITE", "TRIPLITES", "UNSPLINTERABLE", "UNSPLIT", "UPLIT", "WASPLIKE", "WISPLIKE"]
     try:
+        # This test makes sure the original example works correctly
         four_letters_in_common("SPLIT", sample_dictionary)
+        if len(four_letters_in_common("SPLIT", sample_dictionary)) != 82:
+            raise
         tests_completed += 1
     except:
         print("Error with Test 1")
     finally:
         try:
+            # This test makes sure that the source string is at least 4 characters long
             four_letters_in_common("SPL", sample_dictionary)
             tests_completed += 1
         except:
