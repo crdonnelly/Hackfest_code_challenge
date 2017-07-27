@@ -40,3 +40,20 @@ def four_letters_in_common(source, dictionary):
     return output_list
 
                 
+def four_letters_in_common_test():
+    tests_completed = 0
+    sample_dictionary = ["AMPLITUDE", "AMPLITUDES", "APLITE", "APLITES", "APLITIC", "DISPLING", "EARSPLITTING", "HAIRSPLITTER", "HAIRSPLITTERS", "HAIRSPLITTING", "HAIRSPLITTINGS", "HAPLITE", "HAPLITES", "HAPLITIC", "HOPLITE", "HOPLITES", "HOPLITIC", "LAMPLIT", "POPLITEAL", "POPLITEI", "POPLITEUS", "POPLITIC", "PRESPLIT", "RESPLICE", "RESPLICED", "RESPLICES", "RESPLICING", "RESPLIT", "RESPLITS", "RESPLITTING", "SHINSPLINTS", "SIDESPLITTING", "SIDESPLITTINGLY", "SPLICE", "SPLICED", "SPLICER", "SPLICERS", "SPLICES", "SPLICING", "SPLICINGS", "SPLIFF", "SPLIFFS", "SPLINE", "SPLINED", "SPLINES", "SPLINING", "SPLINT", "SPLINTED", "SPLINTER", "SPLINTERED", "SPLINTERIER", "SPLINTERIEST", "SPLINTERING", "SPLINTERS", "SPLINTERY", "SPLINTING", "SPLINTLIKE", "SPLINTS", "SPLINTWOOD", "SPLINTWOODS", "SPLISH", "SPLISHED", "SPLISHES", "SPLISHING", "SPLIT", "SPLITS", "SPLITTED", "SPLITTER", "SPLITTERS", "SPLITTING", "SPLITTINGS", "SPLITTISM", "SPLITTISMS", "SPLITTIST", "SPLITTISTS", "TRIPLITE", "TRIPLITES", "UNSPLINTERABLE", "UNSPLIT", "UPLIT", "WASPLIKE", "WISPLIKE"]
+    try:
+        four_letters_in_common("SPLIT", sample_dictionary)
+        tests_completed += 1
+    except:
+        print("Error with Test 1")
+    finally:
+        try:
+            four_letters_in_common("SPL", sample_dictionary)
+            tests_completed += 1
+        except:
+            print("Error with Test 2")
+        finally:
+            print(str(tests_completed) + "/2 Tests completed")
+        
